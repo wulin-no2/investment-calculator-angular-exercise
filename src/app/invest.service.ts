@@ -27,6 +27,12 @@ export class InvestService {
           enteredData.initialInvestment + enteredData.annualInvestment * year,
       });
     }
+    localStorage.setItem('annualData',JSON.stringify(this.annualData));
+    return this.annualData;
+  }
+  getAnnualData(){
+    const temp = localStorage.getItem('annualData');
+    if(temp) this.annualData = JSON.parse(temp);
     return this.annualData;
   }
 }

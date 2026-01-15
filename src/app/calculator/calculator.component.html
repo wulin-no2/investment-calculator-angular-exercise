@@ -3,20 +3,18 @@
     <p>
       <label for="initial-investment">INITIAL INVESTMENT</label>
       <input
-        type="text"
+        type="number"
         name="initial-investment"
         id="initial-investment"
-        placeholder="0"
         [(ngModel)]="enteredInitial"
       />
     </p>
     <p>
       <label for="annual-investment">ANNUAL INVESTMENT</label>
       <input
-        type="text"
+        type="number"
         name="annual-investment"
         id="annual-investment"
-        placeholder="0"
         [(ngModel)]="enteredAnnual"
       />
     </p>
@@ -24,20 +22,19 @@
     <p>
       <label for="excepted-return">EXCEPTED RETURN</label>
       <input
-        type="text"
+        type="number"
         name="excepted-return"
         id="excepted-return"
-        placeholder="0"
+        step="any"
         [(ngModel)]="enteredExpReturn"
       />
     </p>
     <p>
       <label for="duration">DURATION</label>
       <input
-        type="text"
+        type="number"
         name="duration"
         id="duration"
-        placeholder="10"
         [(ngModel)]="enteredDuration"
       />
     </p>

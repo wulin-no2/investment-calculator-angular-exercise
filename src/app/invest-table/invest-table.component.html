@@ -10,16 +10,13 @@
     @for (annual of annualData; track annualData?.length) {
       <tr>
         <td>{{annual.year}}</td>
-        <td>{{annual.valueEndOfYear}}</td>
-        <td>{{annual.interest}}</td>
-        <td>{{annual.totalInterest}}</td>
-        <td>{{annual.totalAmountInvested}}</td>
+        <td>$ {{annual.valueEndOfYear | number: '1.2-2'}}</td>
+        <td>$ {{annual.interest | number: '1.2-2' }} </td>
+        <td>$ {{annual.totalInterest | number: '1.2-2'}}</td>
+        <td>$ {{annual.totalAmountInvested | number: '1.2-2'}}</td>
       </tr>
 
     }
-
-
-
   </table>
 </div>
 

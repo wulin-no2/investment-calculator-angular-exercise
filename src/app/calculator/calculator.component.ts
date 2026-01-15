@@ -10,17 +10,17 @@ import { EnteredData } from '../calculator.model';
   styleUrl: './calculator.component.css',
 })
 export class CalculatorComponent {
-  enteredInitial = 0;
-  enteredAnnual = 0;
-  enteredExpReturn = 0;
-  enteredDuration = 0;
+  enteredInitial: number | null = null;
+  enteredAnnual: number | null = null;
+  enteredExpReturn: number | null = null;
+  enteredDuration: number | null = null;
   @Output() result = new EventEmitter<EnteredData>();
   onSubmit() {
     this.result.emit({
-      initialInvestment: this.enteredInitial,
-      annualInvestment: this.enteredAnnual,
-      duration: this.enteredDuration,
-      expectedReturn: this.enteredExpReturn,
+      initialInvestment: this.enteredInitial ?? 0,
+      annualInvestment: this.enteredAnnual ?? 0,
+      duration: this.enteredDuration ?? 0,
+      expectedReturn: this.enteredExpReturn ?? 0,
     });
   }
 }

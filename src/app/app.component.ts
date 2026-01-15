@@ -12,8 +12,8 @@ import { InvestService } from './invest.service';
   imports: [HeaderComponent, CalculatorComponent, InvestTableComponent],
 })
 export class AppComponent {
-  annualData: AnnualDataPoint[] = [];
   constructor(private investService: InvestService) {}
+  annualData: AnnualDataPoint[] = this.investService.getAnnualData();
 
   onCalculate(enteredData: EnteredData) {
     this.annualData =
