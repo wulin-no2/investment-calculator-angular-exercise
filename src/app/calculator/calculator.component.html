@@ -1,43 +1,46 @@
 <div class="center">
   <form (ngSubmit)="onSubmit()">
-    <p>
-      <label for="initial-investment">INITIAL INVESTMENT</label>
-      <input
-        type="number"
-        name="initial-investment"
-        id="initial-investment"
-        [(ngModel)]="enteredInitial"
-      />
-    </p>
-    <p>
-      <label for="annual-investment">ANNUAL INVESTMENT</label>
-      <input
-        type="number"
-        name="annual-investment"
-        id="annual-investment"
-        [(ngModel)]="enteredAnnual"
-      />
-    </p>
-
-    <p>
-      <label for="excepted-return">EXCEPTED RETURN</label>
-      <input
-        type="number"
-        name="excepted-return"
-        id="excepted-return"
-        step="any"
-        [(ngModel)]="enteredExpReturn"
-      />
-    </p>
-    <p>
-      <label for="duration">DURATION</label>
-      <input
-        type="number"
-        name="duration"
-        id="duration"
-        [(ngModel)]="enteredDuration"
-      />
-    </p>
+    <div class="input-group">
+      <p>
+        <label for="initial-investment">INITIAL INVESTMENT</label>
+        <input
+          type="number"
+          name="initial-investment"
+          id="initial-investment"
+          [(ngModel)]="enteredInitial"
+        />
+      </p>
+      <p>
+        <label for="annual-investment">ANNUAL INVESTMENT</label>
+        <input
+          type="number"
+          name="annual-investment"
+          id="annual-investment"
+          [(ngModel)]="enteredAnnual"
+        />
+      </p>
+    </div>
+    <div class="input-group">
+      <p>
+        <label for="excepted-return">EXCEPTED RETURN</label>
+        <input
+          type="number"
+          name="excepted-return"
+          id="excepted-return"
+          step="any"
+          [(ngModel)]="enteredExpReturn"
+        />
+      </p>
+      <p>
+        <label for="duration">DURATION</label>
+        <input
+          type="number"
+          name="duration"
+          id="duration"
+          [(ngModel)]="enteredDuration"
+        />
+      </p>
+    </div>
     <p>
       <button>CALCULATE</button>
     </p>

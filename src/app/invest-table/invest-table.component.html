@@ -1,5 +1,6 @@
 <div class="center">
   <table>
+    <thead>
     <tr>
       <th>Year</th>
       <th>Investment Value</th>
@@ -7,6 +8,8 @@
       <th>Total Interest</th>
       <th>Invested Capital</th>
     </tr>
+  </thead>
+  <tbody>
     @for (annual of annualData; track annualData?.length) {
       <tr>
         <td>{{annual.year}}</td>
@@ -15,8 +18,8 @@
         <td>$ {{annual.totalInterest | number: '1.2-2'}}</td>
         <td>$ {{annual.totalAmountInvested | number: '1.2-2'}}</td>
       </tr>
-
     }
+  </tbody>
   </table>
 </div>
 
