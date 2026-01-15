@@ -7,9 +7,18 @@
       <th>Total Interest</th>
       <th>Invested Capital</th>
     </tr>
-    <tr></tr>
-    <tr></tr>
-    <tr></tr>
+    @for (annual of annualData; track annualData?.length) {
+      <tr>
+        <td>{{annual.year}}</td>
+        <td>{{annual.valueEndOfYear}}</td>
+        <td>{{annual.interest}}</td>
+        <td>{{annual.totalInterest}}</td>
+        <td>{{annual.totalAmountInvested}}</td>
+      </tr>
+
+    }
+
+
 
   </table>
 </div>

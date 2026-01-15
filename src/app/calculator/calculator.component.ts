@@ -1,13 +1,13 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { EnteredData } from './calculator.model';
+import { EnteredData } from '../calculator.model';
 
 @Component({
   selector: 'app-calculator',
   standalone: true,
   imports: [FormsModule],
   templateUrl: './calculator.component.html',
-  styleUrl: './calculator.component.css'
+  styleUrl: './calculator.component.css',
 })
 export class CalculatorComponent {
   enteredInitial = 0;
@@ -20,11 +20,7 @@ export class CalculatorComponent {
       initialInvestment: this.enteredInitial,
       annualInvestment: this.enteredAnnual,
       duration: this.enteredDuration,
-      expectedReturn: this.enteredExpReturn
-    })
+      expectedReturn: this.enteredExpReturn,
+    });
   }
-
-
-
-
 }

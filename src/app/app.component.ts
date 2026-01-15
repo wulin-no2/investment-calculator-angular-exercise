@@ -1,9 +1,9 @@
-import { InvestService } from './invest.service';
 import { Component } from '@angular/core';
-import { HeaderComponent } from "./header/header.component";
-import { CalculatorComponent } from "./calculator/calculator.component";
-import { AnnualDataPoint, EnteredData } from './calculator/calculator.model';
-import { InvestTableComponent } from "./invest-table/invest-table.component";
+import { AnnualDataPoint, EnteredData } from './calculator.model';
+import { CalculatorComponent } from './calculator/calculator.component';
+import { HeaderComponent } from './header/header.component';
+import { InvestTableComponent } from './invest-table/invest-table.component';
+import { InvestService } from './invest.service';
 
 @Component({
   selector: 'app-root',
@@ -16,6 +16,7 @@ export class AppComponent {
   constructor(private investService: InvestService) {}
 
   onCalculate(enteredData: EnteredData) {
-    this.annualData = this.investService.calculateInvestmentResults(enteredData);
+    this.annualData =
+      this.investService.calculateInvestmentResults(enteredData);
   }
 }

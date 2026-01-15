@@ -1,7 +1,7 @@
-import { AnnualDataPoint, EnteredData } from './calculator/calculator.model';
-import { Injectable, NgModule } from "@angular/core";
+import { Injectable } from '@angular/core';
+import { AnnualDataPoint, EnteredData } from './calculator.model';
 
-@Injectable({providedIn:'root'})
+@Injectable({ providedIn: 'root' })
 export class InvestService {
   private annualData: AnnualDataPoint[] = [];
   calculateInvestmentResults(enteredData: EnteredData) {
@@ -10,17 +10,21 @@ export class InvestService {
 
     for (let i = 0; i < enteredData.duration; i++) {
       const year = i + 1;
-      const interestEarnedInYear = investmentValue * (enteredData.expectedReturn / 100);
+      const interestEarnedInYear =
+        investmentValue * (enteredData.expectedReturn / 100);
       investmentValue += interestEarnedInYear + enteredData.annualInvestment;
       const totalInterest =
-        investmentValue - enteredData.annualInvestment * year - enteredData.initialInvestment;
+        investmentValue -
+        enteredData.annualInvestment * year -
+        enteredData.initialInvestment;
       this.annualData.push({
         year: year,
         interest: interestEarnedInYear,
         valueEndOfYear: investmentValue,
         annualInvestment: enteredData.annualInvestment,
         totalInterest: totalInterest,
-        totalAmountInvested: enteredData.initialInvestment + enteredData.annualInvestment * year,
+        totalAmountInvested:
+          enteredData.initialInvestment + enteredData.annualInvestment * year,
       });
     }
     return this.annualData;
